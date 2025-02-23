@@ -9,14 +9,14 @@ def generate_questions(num_questions=10):
     questions = []
     for _ in range(num_questions):
         # 구구단 범위 1~9 (원하는 범위 확장 가능)
-        x = random.randint(1, 9)
+        x = random.randint(2, 9)
         y = random.randint(1, 9)
         answer = x * y
 
         # 보기용 오답 생성 (중복되지 않게)
         choices = set([answer])
         while len(choices) < 4:
-            wrong = random.randint(1, 81)  # 9*9 = 81, 범위 내 랜덤
+            wrong = random.randint(2, 81)  # 9*9 = 81, 범위 내 랜덤
             choices.add(wrong)
         choices = list(choices)
         random.shuffle(choices)
